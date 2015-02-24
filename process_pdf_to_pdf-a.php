@@ -1,5 +1,6 @@
 <?php
 	$start_time = explode(' ', microtime()); $start_time = $start_time[1] + $start_time[0];
+	$count=0;
 	error_reporting(-1);
 	print $spacer="##############################################################################\n";
 	echo date('M d, Y H:i:s');
@@ -34,6 +35,8 @@
 /** I'm not actively running this, but if I wanted to, I just uncomment the following lines. **/ 			
 //                	$outputConvert 	= shell_exec($runExec);  // ." 2>&1"
 //                	$outputMove 	= shell_exec($runMove);  // ." 2>&1"
+
+					$count++;
                 }
             }
         }
@@ -41,7 +44,7 @@
 	
 	$end_time = explode(' ', microtime()); $total_time = $end_time[0] + $end_time[1] - $start_time; 
 	print "\n".$spacer;
-	printf('Runtime: %.3f seconds.', $total_time);
+	printf('Runtime: %.3f seconds.  %d files processed', $total_time, $count);
 	print "\n".$spacer;
 	
 /******************************************************************************************************/
