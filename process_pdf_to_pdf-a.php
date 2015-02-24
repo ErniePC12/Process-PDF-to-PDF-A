@@ -19,7 +19,6 @@
 	checkVolume($rootPath, $smbLogin, $smbPassword, $smbServer, $smbShare);
 
  	$rootDirectory = dirToArray($rootPath);
-	
 	if ($rootDirectory != NULL)
 	{
         foreach ($rootDirectory as $key => $dirOrders) 
@@ -29,12 +28,10 @@
             {
                 if (substr($fileName, 0, 7) != "(PDF-A)")
                 {
-                    print $runExec = $command.$rootPath.$dirOrders."/\"(PDF-A) ".$fileName."\" ".$rootPath.$dirOrders."/\"".$fileName."\" \n";
+                    $runExec = $command.$rootPath.$dirOrders."/\"(PDF-A) ".$fileName."\" ".$rootPath.$dirOrders."/\"".$fileName."\" \n";
                     $runMove = "mv ".$rootPath.$dirOrders."/\"".$fileName."\" ".$rootPath.$processedFolder."PDF-A\ Processed/".$dirOrders."/\"".$fileName."\"\n";
                 
 /** I'm not actively running this, but if I wanted to, I just uncomment the following lines. **/ 			
-//                	$outputConvert 	= shell_exec($runExec);  // ." 2>&1"
-//                	$outputMove 	= shell_exec($runMove);  // ." 2>&1"
 
 					$count++;
                 }
