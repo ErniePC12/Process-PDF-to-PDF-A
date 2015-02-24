@@ -36,6 +36,8 @@
                     $runMove = "mv ".$rootPath.$dirOrders."/\"".$fileName."\" ".$rootPath.$processedFolder."PDF-A\ Processed/".$dirOrders."/\"".$fileName."\"\n";
                 
 /** I'm not actively running this, but if I wanted to, I just uncomment the following lines. **/ 			
+//                	$outputConvert 	= shell_exec($runExec);
+//                	$outputMove 	= shell_exec($runMove);
 
 					$count++;
                 }
