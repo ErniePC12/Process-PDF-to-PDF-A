@@ -19,6 +19,10 @@
 	checkVolume($rootPath, $smbLogin, $smbPassword, $smbServer, $smbShare);
 
  	$rootDirectory = dirToArray($rootPath);
+ 	
+ 	if (isset($argv['1']) == TRUE)
+ 		$rootDirectory = array("ORDERS_".$argv['1']);
+ 	
 	if ($rootDirectory != NULL)
 	{
         foreach ($rootDirectory as $key => $dirOrders) 
