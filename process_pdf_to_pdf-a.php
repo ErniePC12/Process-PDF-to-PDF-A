@@ -43,13 +43,14 @@
 	print "\n".$spacer;
 	printf('Runtime: %.3f seconds.  %d files processed', $total_time, $count);
 	print "\n".$spacer;
+	shell_exec("umount ".$rootPath." > /dev/null");
 	
 /******************************************************************************************************/
 function checkVolume($vol, $smbLogin, $smbPassword, $smbServer, $smbShare)
 {
-	if(is_dir($vol))
+	if(!is_dir($vol))
 	{
-		echo "Mounting Orders Drive\n";
+		echo "Mounting Orders Drive\n\n";
 		$outputMount 	= shell_exec("osascript -e 'mount volume \"smb://".$smbLogin.":".$smbPassword."@".$smbServer."/".$smbShare."\"' > /dev/null");
 	}
 }
